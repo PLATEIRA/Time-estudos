@@ -1,4 +1,5 @@
 import React from "react";
+import style from './Lista.module.scss';
 //import { isTemplateTail } from "typescript";
 
 function Lista(){
@@ -13,11 +14,11 @@ function Lista(){
         tempo: '03:00:00'
     }]
     return(
-        <aside>
+        <aside className={style.listaTarefas}>
             <h2>Estudo do dia</h2>
             <ul>
                 {tarefas.map((item, index) => (
-                    <li key={index}>
+                    <li key={index} className={style.item}>
                         <h3>{item.tarefa}</h3>
                         <span>{item.tempo}</span>
                     </li>
