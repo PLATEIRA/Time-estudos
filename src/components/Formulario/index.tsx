@@ -4,9 +4,9 @@ import Botao from "../Botao";
 import style from  './Formulario.module.scss';
 
 class Formulario extends React.Component {
-    state = {
-        tarefa: "";
-        tempo: "00:00:00";
+    state = { 
+        tarefa: " ",
+        tempo: "00:00:00"
     }
     render() {
         return(
@@ -19,6 +19,8 @@ class Formulario extends React.Component {
                         type="text"
                         name="tarefa"
                         id="tarefa"
+                        value={this.state.tarefa}
+                        onChange={(evento => this.setState({ ...this.state, tarefa: evento.target.value}))}
                         placeholder="O que você quer estudar"
                         required
                     />
@@ -32,6 +34,8 @@ class Formulario extends React.Component {
                         step="1"
                         name="tempo"
                         value={this.state.tempo}
+                        onChange={(evento => this.setState({ ...this.state, tempo: evento.target.value}))}
+                      
                         id="tempo"
                         min="00:00:00"
                         max="01:30:00"
