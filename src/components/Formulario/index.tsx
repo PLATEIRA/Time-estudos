@@ -8,9 +8,15 @@ class Formulario extends React.Component {
         tarefa: " ",
         tempo: "00:00:00"
     }
+
+    adicionarTarefa(evento){
+        evento.preventDefault();
+        console.log('state: ', this.state);
+    }
+
     render() {
         return(
-            <form className={style.novaTarefa}>
+            <form className={style.novaTarefa} onSubmit={this.adicionarTarefa}>
                 <div className={style.inputConteiner}>
                     <label htmlFor="tarefa">
                         Adicione um novo estudo
